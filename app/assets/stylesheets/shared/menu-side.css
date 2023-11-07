@@ -1,0 +1,11 @@
+.menu-side{
+  height: calc(100vh - 180px);
+  width: 150px;
+  border-radius: 0px 20px 20px 0px;
+  background-color: #e9dfe5;
+  padding: 30px 0px 0px 20px;
+}
+
+.menu-list{
+  margin-bottom: 30px;
+}

@@ -1,0 +1,25 @@
+.wrapper{
+  display: flex;
+}
+
+.main-side{
+  height: calc(100vh - 60px);
+  width: calc(100vw - 150px);
+}
+
+.main{
+  margin: 10px 50px 10px 10px;
+}
+
+.meal-time{
+  display: flex;
+}
+
+.meal-time-list{
+  width: 20%;
+  text-align: center;
+  border-bottom: 2px solid gray;
+  border-right: 1px solid gray;
+  margin: 10px;
+  padding: 10px;
+}
