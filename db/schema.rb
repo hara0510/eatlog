@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_120650) do
 
   create_table "posts", charset: "utf8", force: :cascade do |t|
     t.text "memo"
-    t.integer "meal_time_id", null: false
+    t.integer "mealtime_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

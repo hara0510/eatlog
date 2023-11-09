@@ -17,7 +17,7 @@
     <div class="post-menu">メモ</div>
     <%= f.text_area :memo, id:"post-memo" %>
     <div class="post-menu">食事時間</div>
-    <%= f.collection_select(:meal_time_id, Meal_time.all, :id, :name, {}, {class:"select-box", id:"post-meal_time"}) %>
+    <%= f.collection_select(:mealtime_id, Mealtime.all, :id, :name, {}, {class:"select-box", id:"post-mealtime"}) %>
     <%= f.submit "投稿する" ,class:"submit" %>
   <% end %>
 </div>

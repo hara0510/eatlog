@@ -1,4 +1,4 @@
-class Meal_time < ActiveHash::Base
+class Mealtime < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: 'あさ' },
@@ -6,6 +6,3 @@ class Meal_time < ActiveHash::Base
     { id: 4, name: 'よる' },
   ]
 end
-
-include ActiveHash::Associations
-has_many :posts
