@@ -5,10 +5,8 @@
 .main-side{
   height: calc(100vh - 60px);
   width: calc(100vw - 150px);
-}
-
-.main{
-  margin: 10px 50px 10px 10px;
+  background-color: aqua;
+  padding: 10px 50px 10px 10px;
 }
 
 .meal-time{

@@ -4,7 +4,9 @@
 <div class="menu-list">新規登録</div>
 
 <%# ログインしている場合表示 %>
-<div class="menu-list">投稿する</div>
+<div class="menu-list">
+  <%= link_to '投稿する', new_post_path, class: "menu-list" %>
+</div>
 <div class="menu-list">マイページ</div>
 <div class="menu-list">みんなの投稿</div>
 <div class="menu-list">ログアウト</div>
