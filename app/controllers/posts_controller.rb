@@ -12,6 +12,12 @@ class PostsController < ApplicationController
     redirect_to '/'
   end
 
+  def show_by_mealtime
+    mealtime_id = params[:mealtime_id]
+    @posts = Post.where(mealtime_id: mealtime_id)
+    render :index
+  end
+
   private
   def post_params
     params.require(:post).permit(:memo, :mealtime_id, :image)

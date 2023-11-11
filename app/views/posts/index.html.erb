@@ -12,15 +12,14 @@
   <div class="main-side">
     <div class="meal-time">
       <%= link_to "ALL", root_path, class: "meal-time-list" %>
-      <%= link_to "BREAKFAST", root_path, class: "meal-time-list" %>
-      <%= link_to "LUNCH", root_path, class: "meal-time-list" %>
-      <%= link_to "DINNER", root_path, class: "meal-time-list" %>
+      <%= link_to "BREAKFAST", show_by_mealtime_posts_path(mealtime_id: '2'), class: "meal-time-list" %>
+      <%= link_to "LUNCH", show_by_mealtime_posts_path(mealtime_id: '3'), class: "meal-time-list" %>
+      <%= link_to "DINNER", show_by_mealtime_posts_path(mealtime_id: '4'), class: "meal-time-list" %>
     </div>
 
     <div class="meal-picrure">
       <% @posts.each do |post| %>
         <%= image_tag post.image, class: "post-picture" %>
-        <%# <%= Mealtime.find_by_id(post.mealtime_id)&.name %>
       <% end %>
     </div>
   </div>
