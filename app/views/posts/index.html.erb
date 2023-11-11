@@ -18,7 +18,7 @@
     </div>
 
     <div class="meal-picrure">
-      <% @posts.each do |post| %>
+      <% @posts.reverse_each do |post| %>
         <%= image_tag post.image, class: "post-picture" %>
       <% end %>
     </div>
