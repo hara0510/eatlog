@@ -3,19 +3,23 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show_by_mealtime
+    mealtime_id = params[:mealtime_id]
+    @posts = Post.where(mealtime_id: mealtime_id)
+    render :index
+  end
+
   def new
     @post = Post.new
   end
 
   def create
-    Post.create(post_params)
-    redirect_to '/'
-  end
-
-  def show_by_mealtime
-    mealtime_id = params[:mealtime_id]
-    @posts = Post.where(mealtime_id: mealtime_id)
-    render :index
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render:new, status: :unprocessable_entity
+    end
   end
 
   private
