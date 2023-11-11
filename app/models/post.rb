@@ -3,5 +3,6 @@ class Post < ApplicationRecord
   belongs_to :mealtime
   has_one_attached :image
 
+  validates :image, presence: true
   validates :mealtime_id, numericality: {other_than: 1 }
 end
