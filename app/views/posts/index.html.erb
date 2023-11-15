@@ -19,7 +19,7 @@
 
     <div class="meal-picrure">
       <% @posts.reverse_each do |post| %>
-        <%= image_tag post.image, class: "post-picture" %>
+        <%= link_to post_path(post.id) do %><%= image_tag post.image, class: "post-picture" %><% end %>
       <% end %>
     </div>
   </div>

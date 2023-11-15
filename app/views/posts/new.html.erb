@@ -4,14 +4,14 @@
 <%# ===========================
   メニュー
 =========================== %>
-<%= render "shared/menu-side" %>
+  <%= render "shared/menu-side" %>
 
 <%# ===========================
   投稿一覧
 =========================== %>
-<div class="main-side-post">
-  <div class="pagetitle">POST</div>
-  <%= form_with(model: @post, local: true) do |f| %>
+  <div class="main-side-post">
+    <div class="pagetitle">POST</div>
+    <%= form_with(model: @post, local: true) do |f| %>
     <div class="post-menu">画像</div>
     <%= f.file_field :image, id:"post-image" %>
     <div class="post-menu">メモ</div>
@@ -19,5 +19,6 @@
     <div class="post-menu">食事時間</div>
     <%= f.collection_select(:mealtime_id, Mealtime.all, :id, :name, {}, {class:"select-box", id:"post-mealtime"}) %>
     <%= f.submit "投稿する" ,class:"submit" %>
-  <% end %>
+    <% end %>
+  </div>
 </div>

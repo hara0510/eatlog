@@ -1,0 +1,25 @@
+<%= render "shared/header" %>
+
+<div class="wrapper">
+<%# ===========================
+  メニュー
+=========================== %>
+  <%= render "shared/menu-side" %>
+
+<%# ===========================
+  詳細表示
+=========================== %>
+  <div class="main-side-post">
+    <%= image_tag @post.image, class: "post-show-picture" %>
+    <div class="post-show-column">
+      user:
+    </div>
+    <div class="post-show-column">
+      memo:<%= @post.memo%>
+    </div>
+    <div class="post-show-column">
+      time:<%= Mealtime.find_by_id(@post.mealtime_id)&.name %>
+    </div>
+  </div>
+
+</div>
