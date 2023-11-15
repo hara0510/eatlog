@@ -20,6 +20,14 @@
     <div class="post-show-column">
       time:<%= Mealtime.find_by_id(@post.mealtime_id)&.name %>
     </div>
+    <div class="post-show-menus">
+      <div class="post-show-menu">
+        edit
+      </div>
+      <div class="post-show-menu">
+        delete
+      </div>
+    </div>
   </div>
 
 </div>
