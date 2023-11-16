@@ -10,15 +10,20 @@
   投稿一覧
 =========================== %>
   <div class="main-side-post">
-    <div class="pagetitle">POST</div>
+    <div class="pagetitle">食べたものを記録しましょう！</div>
     <%= form_with(model: @post, local: true) do |f| %>
-    <div class="post-menu">画像</div>
-    <%= f.file_field :image, id:"post-image" %>
-    <div class="post-menu">メモ</div>
-    <%= f.text_area :memo, id:"post-memo" %>
-    <div class="post-menu">食事時間</div>
-    <%= f.collection_select(:mealtime_id, Mealtime.all, :id, :name, {}, {class:"select-box", id:"post-mealtime"}) %>
-    <%= f.submit "投稿する" ,class:"submit" %>
+    <div>
+      <%= f.file_field :image, id:"post-image" %>
+    </div>
+    <div>
+      <%= f.collection_select(:mealtime_id, Mealtime.all, :id, :name, {}, {class:"select-box", id:"post-mealtime"}) %>
+    </div>
+    <div>
+      <%= f.text_area :memo, placeholder: "感想やレシピをメモ(任意)", id:"post-memo" %>
+    </div>
+    <div class="submit">
+      <%= f.submit "POST" ,id:"submit" %>
+    </div>
     <% end %>
   </div>
 </div>

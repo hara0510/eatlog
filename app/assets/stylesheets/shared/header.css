@@ -11,5 +11,7 @@
 }
 
 .pagetitle{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #805b4d;
 }
