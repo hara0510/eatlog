@@ -22,12 +22,13 @@
     </div>
     <div class="post-show-menus">
       <div class="post-show-menu">
-        edit
+        <%= link_to "EDIT", edit_post_path(@post.id), class: "post-show-menutext" %>
       </div>
       <div class="post-show-menu">
-        delete
+        <%= link_to "DELETE", root_path, class: "post-show-menutext" %>
       </div>
     </div>
+    <%# <div>comment</div> %>
   </div>
 
 </div>

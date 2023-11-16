@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action:set_post, only: [:edit, :show, :update]
+
   def index
     @posts = Post.all
   end
@@ -23,12 +26,27 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    @post.update(post_params)
+    if @post.save
+      redirect_to post_path(@post.id)
+    else
+      render:edit, status: :unprocessable_entity
+    end
   end
 
   private
   def post_params
     params.require(:post).permit(:memo, :mealtime_id, :image)
     # .merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end
