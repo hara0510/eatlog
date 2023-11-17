@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+
+<div class="wrapper">
+<%# ===========================
+  メニュー
+=========================== %>
+  <%= render "shared/menu-side" %>
+
+<%# ===========================
+  投稿一覧
+=========================== %>
+  <div class="main-side-post">
+    <div class="pagetitle">食べたものを記録しましょう！</div>
+    <%= form_with(model: @post, local: true) do |f| %>
+    <div>
+      <%= f.file_field :image, id:"post-image" %>
+    </div>
+    <div>
+      <%= f.collection_select(:mealtime_id, Mealtime.all, :id, :name, {}, {class:"select-box", id:"post-mealtime"}) %>
+    </div>
+    <div>
+      <%= f.text_area :memo, placeholder: "感想やレシピをメモ(任意)", id:"post-memo" %>
+    </div>
+    <div class="submit">
+      <%= f.submit "POST" ,id:"submit" %>
+    </div>
+    <% end %>
+  </div>
+</div>

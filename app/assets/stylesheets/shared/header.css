@@ -1,0 +1,17 @@
+.title{
+  font-family: 'Sacramento', cursive;
+  height: 60px;
+  width: 100vw;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+.pagetitle{
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #805b4d;
+}

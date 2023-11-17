@@ -1,0 +1,27 @@
+<%= render "shared/header" %>
+
+<div class="wrapper">
+<%# ===========================
+  メニュー
+=========================== %>
+<%= render "shared/menu-side" %>
+
+<%# ===========================
+  投稿一覧
+=========================== %>
+  <div class="main-side">
+    <div class="meal-time">
+      <%= link_to "ALL", root_path, class: "meal-time-list" %>
+      <%= link_to "BREAKFAST", show_by_mealtime_posts_path(mealtime_id: '2'), class: "meal-time-list" %>
+      <%= link_to "LUNCH", show_by_mealtime_posts_path(mealtime_id: '3'), class: "meal-time-list" %>
+      <%= link_to "DINNER", show_by_mealtime_posts_path(mealtime_id: '4'), class: "meal-time-list" %>
+    </div>
+
+    <div class="meal-picrure">
+      <% @posts.reverse_each do |post| %>
+        <%= link_to post_path(post.id) do %><%= image_tag post.image, class: "post-picture" %><% end %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
