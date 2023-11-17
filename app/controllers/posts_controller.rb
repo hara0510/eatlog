@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-
-  before_action:set_post, only: [:edit, :show, :update, :destroy]
+  before_action :set_post, only: [:edit, :show, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -8,7 +7,7 @@ class PostsController < ApplicationController
 
   def show_by_mealtime
     mealtime_id = params[:mealtime_id]
-    @posts = Post.where(mealtime_id: mealtime_id)
+    @posts = Post.where(mealtime_id:)
     render :index
   end
 
@@ -21,7 +20,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      render:new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -36,7 +35,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post.id)
     else
-      render:edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -45,8 +44,8 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-
   private
+
   def post_params
     params.require(:post).permit(:memo, :mealtime_id, :image)
     # .merge(user_id: current_user.id)

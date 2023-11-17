@@ -3,6 +3,6 @@ class Mealtime < ActiveHash::Base
     { id: 1, name: '食べた時間を選択' },
     { id: 2, name: 'あさ' },
     { id: 3, name: 'ひる' },
-    { id: 4, name: 'よる' },
+    { id: 4, name: 'よる' }
   ]
 end

@@ -27,10 +27,10 @@ RSpec.describe Post, type: :model do
       it 'mealtime_idが空では投稿できない' do
         @post.mealtime_id = '1'
         @post.valid?
-        expect(@post.errors.full_messages).to include "Mealtime must be other than 1"
+        expect(@post.errors.full_messages).to include 'Mealtime must be other than 1'
       end
 
-      # it 'userが紐づいていないと登録できない' 
+      # it 'userが紐づいていないと登録できない'
     end
   end
 end

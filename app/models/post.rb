@@ -4,5 +4,5 @@ class Post < ApplicationRecord
   has_one_attached :image
 
   validates :image, presence: true
-  validates :mealtime_id, numericality: {other_than: 1 }
+  validates :mealtime_id, numericality: { other_than: 1 }
 end
