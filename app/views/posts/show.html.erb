@@ -12,7 +12,7 @@
   <div class="main-side-post">
     <%= image_tag @post.image, class: "post-show-picture" %>
     <div class="post-show-column">
-      user:
+      user:<%= @post.user.nickname %>
     </div>
     <div class="post-show-column">
       memo:<%= @post.memo%>
