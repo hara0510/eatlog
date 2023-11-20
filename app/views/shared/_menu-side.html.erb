@@ -1,7 +1,11 @@
 <div class="menu-side">
 <%# ログインしていない場合表示 %>
-<div class="menu-list">ログイン</div>
-<div class="menu-list">新規登録</div>
+<div class="menu-list">
+  <%= link_to 'ログイン', new_user_session_path, class: "menu-list" %>
+</div>
+<div class="menu-list">
+  <%= link_to '新規登録', new_user_registration_path, class: "menu-list" %>
+</div>
 
 <%# ログインしている場合表示 %>
 <div class="menu-list">
