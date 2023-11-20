@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, except: [:index, :show, :show_by_mealtime_posts]
 
   def index
     @posts = Post.all
@@ -47,11 +48,16 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:memo, :mealtime_id, :image)
-    # .merge(user_id: current_user.id)
+    params.require(:post).permit(:memo, :mealtime_id, :image).merge(user_id: current_user.id)
   end
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
