@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
-  before_action :move_to_index, except: [:index, :show, :show_by_mealtime_posts]
+  before_action :move_to_index, except: [:index, :show, :show_by_mealtime]
 
   def index
     @posts = Post.all
