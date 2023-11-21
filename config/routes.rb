@@ -6,4 +6,5 @@ Rails.application.routes.draw do
       get 'show_by_mealtime/:mealtime_id', to: 'posts#show_by_mealtime', as: 'show_by_mealtime'
     end
   end
+  resources :users, only: :show
 end

@@ -5,7 +5,9 @@
   <div class="menu-list">
     <%= link_to '投稿する', new_post_path, class: "menu-list" %>
   </div>
-  <div class="menu-list">マイページ</div>
+  <div class="menu-list">
+    <%= link_to 'マイページ', "/users/#{current_user.id}", class: "menu-list" %>
+  </div>
   <div class="menu-list">
     <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "menu-list" %>
   </div>
