@@ -21,12 +21,15 @@
       time:<%= Mealtime.find_by_id(@post.mealtime_id)&.name %>
     </div>
     <div class="post-show-menus">
-      <div class="post-show-menu">
-        <%= link_to "EDIT", edit_post_path(@post.id), class: "post-show-menutext" %>
-      </div>
-      <div class="post-show-menu">
-        <%= link_to "DELETE", post_path(@post.id), class: "post-show-menutext",  data: { turbo_method: :delete } %>
-      </div>
+      <% if user_signed_in? && current_user == @post.user %>
+        <div class="post-show-menu">
+          <%= link_to "EDIT", edit_post_path(@post.id), class: "post-show-menutext" %>
+        </div>
+        <div class="post-show-menu">
+          <%= link_to "DELETE", post_path(@post.id), class: "post-show-menutext",  data: { turbo_method: :delete } %>
+        </div>
+      <% else %>
+      <% end %>
     </div>
     <%# <div>comment</div> %>
   </div>

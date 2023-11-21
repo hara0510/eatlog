@@ -29,6 +29,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if user_signed_in? && @current_user.id == @post.user_id
+      render :edit
+    else
+      redirect_to post_path(@post.id)
+    end
   end
 
   def update
@@ -41,6 +46,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    return unless user_signed_in? && current_user.id == @post.user_id
     @post.destroy
     redirect_to root_path
   end
