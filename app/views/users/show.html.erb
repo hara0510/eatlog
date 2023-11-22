@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+
+<div class="wrapper">
+<%# ===========================
+  メニュー
+=========================== %>
+<%= render "shared/menu-side" %>
+
+<%# ===========================
+  投稿一覧
+=========================== %>
+  <div class="main-side">
+
+    <div class="meal-picrure">
+      <% @posts_by_date.sort_by { |date, _| date }.reverse_each do |date, posts| %>
+      <div class="mypage-data"><%= date.strftime("%Y/%m/%d") %></div>
+        <% posts.reverse_each do |post| %>
+          <%= link_to post_path(post.id) do %><%= image_tag post.image, class: "post-picture" %><% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

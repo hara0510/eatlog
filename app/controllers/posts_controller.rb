@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, except: [:index, :show, :show_by_mealtime]
 
   def index
     @posts = Post.all
@@ -28,6 +29,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if user_signed_in? && @current_user.id == @post.user_id
+      render :edit
+    else
+      redirect_to post_path(@post.id)
+    end
   end
 
   def update
@@ -40,6 +46,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    return unless user_signed_in? && current_user.id == @post.user_id
+
     @post.destroy
     redirect_to root_path
   end
@@ -47,11 +55,16 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:memo, :mealtime_id, :image)
-    # .merge(user_id: current_user.id)
+    params.require(:post).permit(:memo, :mealtime_id, :image).merge(user_id: current_user.id)
   end
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    return if user_signed_in?
+
+    redirect_to action: :index
   end
 end

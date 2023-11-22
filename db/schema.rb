@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_07_120650) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_20_150010) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -44,12 +44,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_120650) do
     t.integer "mealtime_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
-    t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "nickname", null: false
     t.text "bio"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
