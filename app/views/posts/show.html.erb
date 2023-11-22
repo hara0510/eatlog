@@ -41,7 +41,7 @@
           <%= form.text_area :content, placeholder: "コメントする", id:"comment" %>
         </div>
         <div class="submit">
-          <%= form.submit "SEND" ,id:"submit" %>
+          <%= form.submit "SEND" ,class: "submit-text" %>
         </div>
       <% end %>
     <% else %>
@@ -49,6 +49,7 @@
       <%= link_to 'ログイン', new_user_session_path, class: "comment-login" %>
       が必要です</div>
     <% end %>
+
     <% @comments.each do |comment| %>
       <div class="comment-user">
         <%= link_to comment.user.nickname, user_path(comment.user), id:"comment-user"%>
