@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'show_by_mealtime/:mealtime_id', to: 'posts#show_by_mealtime', as: 'show_by_mealtime'
     end
+    resources :comments, only: :create
   end
   resources :users, only: :show
 end

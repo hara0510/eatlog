@@ -8,7 +8,7 @@ RSpec.describe Post, type: :model do
 
   describe '新規投稿' do
     context '投稿できる場合' do
-      it 'imageとmealtime_idがあれば登録できる' do
+      it 'imageとmealtime_idとuser_idがあれば登録できる' do
         expect(@post).to be_valid
       end
 
