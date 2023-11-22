@@ -34,9 +34,8 @@ RSpec.describe Post, type: :model do
       it 'userが紐づいていないと登録できない' do
         @post.user = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include("User must exist")
+        expect(@post.errors.full_messages).to include('User must exist')
       end
-
     end
   end
 end

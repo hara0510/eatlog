@@ -47,6 +47,7 @@ class PostsController < ApplicationController
 
   def destroy
     return unless user_signed_in? && current_user.id == @post.user_id
+
     @post.destroy
     redirect_to root_path
   end
@@ -62,8 +63,8 @@ class PostsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
+    return if user_signed_in?
+
+    redirect_to action: :index
   end
 end
