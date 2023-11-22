@@ -31,7 +31,30 @@
       <% else %>
       <% end %>
     </div>
-    <%# <div>comment</div> %>
-  </div>
 
+<%# ===========================
+  コメント投稿欄
+=========================== %>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@post, @comment], local: true) do |form| %>
+        <div>
+          <%= form.text_area :content, placeholder: "コメントする", id:"comment" %>
+        </div>
+        <div class="submit">
+          <%= form.submit "SEND" ,id:"submit" %>
+        </div>
+      <% end %>
+    <% end %>
+    <% @comments.each do |comment| %>
+      <div class="comment-user">
+        <%= link_to comment.user.nickname, user_path(comment.user), id:"comment-user"%>
+      </div>
+      <div class="comment-content">
+        <%= comment.content %>
+      </div>
+    <% end %>
+
+
+
+  </div>
 </div>
