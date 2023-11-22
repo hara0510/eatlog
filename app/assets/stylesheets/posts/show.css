@@ -32,6 +32,24 @@
   margin: 30px 0 10px 0;
 }
 
+.comment-else{
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  border: 1px solid #a58f86;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #805b4d;
+  text-decoration: none;
+  padding: 10px;
+  margin: 30px 0px 30px 0px;
+}
+
+.comment-login{
+  color: #805b4d;
+}
+
 .comment-user{
   margin-bottom: 5px;
   padding-bottom: 5px;

@@ -44,6 +44,10 @@
           <%= form.submit "SEND" ,id:"submit" %>
         </div>
       <% end %>
+    <% else %>
+      <div class="comment-else">コメントを投稿するには
+      <%= link_to 'ログイン', new_user_session_path, class: "comment-login" %>
+      が必要です</div>
     <% end %>
     <% @comments.each do |comment| %>
       <div class="comment-user">
