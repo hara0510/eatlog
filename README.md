@@ -16,8 +16,8 @@ https://eatlog.onrender.com/
 # テスト用アカウント
 * Basic認証パスワード：pass
 * Basic認証ID：user
-* メールアドレス：
-* パスワード：
+* メールアドレス：test1@com
+* パスワード：password1
 
 <br>
 
