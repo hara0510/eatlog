@@ -1,14 +1,13 @@
+<%# ===========================
+  ヘッダー表示
+=========================== %>
 <%= render "shared/header" %>
 
-<div class="wrapper">
-<%# ===========================
-  メニュー
-=========================== %>
-  <%= render "shared/menu-side" %>
 
 <%# ===========================
   投稿一覧
 =========================== %>
+<div class="wrapper">
   <div class="main-side-post">
     <div class="pagetitle">食べたものを記録しましょう！</div>
     <%= form_with(model: @post, local: true) do |f| %>

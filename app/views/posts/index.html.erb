@@ -1,15 +1,14 @@
+<%# ===========================
+  ヘッダー表示
+=========================== %>
 <%= render "shared/header" %>
 
-<div class="wrapper">
-<%# ===========================
-  メニュー
-=========================== %>
-<%= render "shared/menu-side" %>
 
 <%# ===========================
   投稿一覧
 =========================== %>
-  <div class="main-side">
+<div class="wrapper">
+  <div class="main">
     <div class="meal-time">
       <%= link_to "ALL", root_path, class: "meal-time-list" %>
       <%= link_to "BREAKFAST", show_by_mealtime_posts_path(mealtime_id: '2'), class: "meal-time-list" %>

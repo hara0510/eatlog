@@ -1,15 +1,15 @@
+<%# ===========================
+  ヘッダー表示
+=========================== %>
 <%= render "shared/header" %>
 
-<div class="wrapper">
-<%# ===========================
-  メニュー
-=========================== %>
-  <%= render "shared/menu-side" %>
 
 <%# ===========================
   詳細表示
 =========================== %>
+<div class="wrapper">
   <div class="main-side-post">
+
     <%= image_tag @post.image, class: "post-show-picture" %>
     <div class="post-show-column">
       user:<%= @post.user.nickname %>
@@ -45,9 +45,7 @@
         </div>
       <% end %>
     <% else %>
-      <div class="comment-else">コメントを投稿するには
-      <%= link_to 'ログイン', new_user_session_path, class: "comment-login" %>
-      が必要です</div>
+      <div class="comment-else">コメントを投稿するには<%= link_to 'ログイン', new_user_session_path, class: "comment-login" %>が必要です</div>
     <% end %>
 
     <% @comments.each do |comment| %>
@@ -58,8 +56,6 @@
         <%= comment.content %>
       </div>
     <% end %>
-
-
 
   </div>
 </div>

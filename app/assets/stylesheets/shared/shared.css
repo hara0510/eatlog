@@ -1,8 +1,10 @@
 .wrapper{
   display: flex;
+  justify-content: center;
+  height: 100vh;
 }
 
-.main-side{
+.main{
   width: calc(100vw - 150px);
   padding: 10px 50px 10px 10px;
 }
@@ -23,4 +25,10 @@
   text-decoration: none;
   padding: 10px;
   margin: 0px 0px 30px 0px;
+}
+
+.pagetitle{
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #805b4d;
 }

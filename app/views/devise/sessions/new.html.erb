@@ -1,14 +1,13 @@
+<%# ===========================
+  ヘッダー表示
+=========================== %>
 <%= render "shared/header" %>
 
-<div class="wrapper">
-<%# ===========================
-  メニュー
-=========================== %>
-  <%= render "shared/menu-side" %>
 
 <%# ===========================
   投稿一覧
 =========================== %>
+<div class="wrapper">
   <div class="main-side-post">
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
