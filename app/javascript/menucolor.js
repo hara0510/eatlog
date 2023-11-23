@@ -1,5 +1,5 @@
 window.addEventListener('turbo:load', function(){
-  const articles = document.querySelectorAll(".meal-time-list, .submit-text, .post-show-menu");
+  const articles = document.querySelectorAll(".meal-time-list, .submit-text, .post-show-menu, .menu-list");
   articles.forEach(function(article) {
     article.addEventListener('mouseover', function() {
       this.style.backgroundColor = "#e8d3ca";
