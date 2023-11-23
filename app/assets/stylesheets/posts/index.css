@@ -36,8 +36,7 @@
 .meal-picture-size{
   width: calc(33.33% - 5px);
   aspect-ratio: 1 / 1;
-  margin-bottom: 5px;
-  margin-left: 5px;
+  margin: 0 0 3px 5px;
 }
 
 .post-picture{
