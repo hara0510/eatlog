@@ -1,7 +1,6 @@
-.main-side-post{
-  height: calc(100vh - 60px);
-  width: calc(100vw - 150px);
-  padding: 10px 50px 10px 50px;
+.post-text{
+  font-size: 13px;
+  color: black;
 }
 
 #post-image{
@@ -10,7 +9,7 @@
 }
 
 #post-mealtime{
-  width: 150px;
+  width: 250px;
   background-color: white;
   border: 1px solid #a58f86;
   border-radius: 15px;

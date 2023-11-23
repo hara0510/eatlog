@@ -10,11 +10,10 @@
 <div class="wrapper">
   <div class="main">
 
-    <div class="main-side-post">
-      <div class="pagetitle">食べたものを記録しましょう！</div>
+      <div class="pagetitle">投稿の編集</div>
       <%= form_with(model: @post, local: true) do |f| %>
       <div>
-        <%= f.file_field :image, id:"post-image" %>
+        <div class="post-text">写真(必須)</div><%= f.file_field :image, id:"post-image" %>
       </div>
       <div>
         <%= f.collection_select(:mealtime_id, Mealtime.all, :id, :name, {}, {class:"select-box", id:"post-mealtime"}) %>
@@ -26,7 +25,6 @@
         <%= f.submit "EDIT" ,class:"submit-text" %>
       </div>
       <% end %>
-    </div>
 
   </div>
 </div>

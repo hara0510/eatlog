@@ -8,29 +8,51 @@
   詳細表示
 =========================== %>
 <div class="wrapper">
-  <div class="main-side-post">
+  <div class="main">
 
-    <%= image_tag @post.image, class: "post-show-picture" %>
-    <div class="post-show-column">
-      user:<%= @post.user.nickname %>
+    <div class="post-show-picture-center">
+      <%= image_tag @post.image, class: "post-show-picture" %>
     </div>
-    <div class="post-show-column">
-      memo:<%= @post.memo%>
+    
+    <div class="post-show-wrapper">
+      <div class="post-show-name">
+        <%= @post.user.nickname %>
+      </div>
+      <div class="post-show-column">
+        <% if user_signed_in? && current_user == @post.user %>
+          <div class="post-show-menu">
+            <%= link_to "EDIT", edit_post_path(@post.id), class: "post-show-menutext" %>
+          </div>
+          <div class="post-show-menu">
+            <%= link_to "DELETE", post_path(@post.id), class: "post-show-menutext",  data: { turbo_method: :delete } %>
+          </div>
+        <% else %>
+          <div class="post-show-menu">
+            <%= link_to "FOLLOW", root_path, class: "post-show-menutext" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="post-show-column">
-      time:<%= Mealtime.find_by_id(@post.mealtime_id)&.name %>
+
+    <div class="post-show-memo">
+      <%= @post.memo%>
     </div>
+
     <div class="post-show-menus">
-      <% if user_signed_in? && current_user == @post.user %>
-        <div class="post-show-menu">
-          <%= link_to "EDIT", edit_post_path(@post.id), class: "post-show-menutext" %>
-        </div>
-        <div class="post-show-menu">
-          <%= link_to "DELETE", post_path(@post.id), class: "post-show-menutext",  data: { turbo_method: :delete } %>
-        </div>
-      <% else %>
+      <% mealtime = Mealtime.find_by_id(@post.mealtime_id) %>
+        <% if mealtime %>
+        <% case mealtime.name.downcase %>
+          <% when 'あさ' %>
+            <%= image_tag 'mealtime-breakfast.png', class: "post-show-icon" %>
+          <% when 'ひる' %>
+            <%= image_tag 'mealtime-lunch.png', class: "post-show-icon" %>
+          <% when 'よる' %>
+            <%= image_tag 'mealtime-dinner.png', class: "post-show-icon" %>
+        <% end %>
       <% end %>
+      <%= image_tag 'favorite-on.png' , class: "post-show-icon" %>
     </div>
+
 
 <%# ===========================
   コメント投稿欄
