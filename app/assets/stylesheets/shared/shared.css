@@ -1,13 +1,17 @@
+/* ===========================
+  メインコンテンツ全体の設定
+=========================== */
 .wrapper{
   display: flex;
   justify-content: center;
-  height: 100vh;
   margin-top: 70px;
 }
 
 .main{
   width: calc(100vw - 150px);
-  padding: 10px 50px 10px 10px;
+  height: auto;
+  padding: 10px 10px 30px 10px;
+  background-color: aqua;
 }
 
 .submit{
