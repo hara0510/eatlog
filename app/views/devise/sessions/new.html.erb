@@ -1,10 +1,4 @@
 <%# ===========================
-  ヘッダー表示
-=========================== %>
-<%= render "shared/header" %>
-
-
-<%# ===========================
   ログインフォーム
 =========================== %>
 <div class="wrapper">
@@ -24,9 +18,9 @@
     </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="remember-me-field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me, class: "remember-me" %>
     </div>
   <% end %><br />
 
