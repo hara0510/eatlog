@@ -9,8 +9,11 @@
 =========================== %>
 <div class="wrapper">
   <div class="main-small">
-
       <div class="pagetitle">食べたものを記録しましょう！</div>
+
+      <%# エラーメッセージの表示%>
+      <%= render 'shared/error_messages', model: @post %>
+
       <%= form_with(model: @post, local: true) do |f| %>
       <div>
         <div class="post-text">写真(必須)</div><%= f.file_field :image, id:"post-image" %>
@@ -22,7 +25,7 @@
         <%= f.text_area :memo, placeholder: "感想やレシピをメモ(任意)", id:"select-memo" %>
       </div>
       <div class="submit">
-        <%= f.submit "POST" ,class:"submit-text" %>
+        <%= f.submit "POST" ,class:"submit-text",data: { turbo: false } %>
       </div>
       <% end %>
 

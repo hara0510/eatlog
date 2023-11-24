@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      post:
+        image: 写真
+        mealtime_id: 食べた時間
+      comment:
+        content: コメント

@@ -87,9 +87,20 @@
 #select-memo{
   width: 100%;
   height: 200px;
-  border-radius: 20px;
+  border-radius: 18px;
   font-size: 13px;
   border-color: #a58f86;
   padding: 20px;
   margin-bottom: 10px;
+}
+
+/* ===========================
+  エラーメッセージ
+=========================== */
+.error-alert{
+  width: 100%;
+  height: auto;
+  padding: 0 3px 12px 3px;
+  margin: 0 0 30px 0;
+  border-bottom: 1px solid #a58f86;
 }

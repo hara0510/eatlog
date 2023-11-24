@@ -9,11 +9,11 @@
 =========================== %>
 <div class="wrapper">
   <div class="main-small">
-
     <div class="pagetitle">新規登録</div>
-
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+    
+    <%# エラーメッセージの表示%>
+    <%= render 'shared/error_messages', model: resource %>
 
     <div class="field">
       <%= f.label :名前, class:"select-box-label" %><br />
@@ -32,7 +32,7 @@
 
     <div class="field">
       <%= f.label :パスワード, class:"select-box-label" %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class:"select-box" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: '6文字以上', class:"select-box" %>
     </div>
 
     <div class="field">
@@ -41,7 +41,7 @@
     </div><br />
 
     <div class="submit">
-      <%= f.submit "SIGN UP" ,class:"submit-text" %>
+      <%= f.submit "SIGN UP" ,class:"submit-text",data: { turbo: false } %>
     </div>
     <% end %>
 
