@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   def show
-    @nickname = current_user.nickname
-    @posts = current_user.posts
+    user_id = params[:id]
+    @user = User.find_by(id: user_id)
+
+    if @user
+    @nickname = @user.nickname
+    @posts = @user.posts
     @posts_by_date = @posts.group_by { |post| post.created_at.to_date }
+    end
   end
 end

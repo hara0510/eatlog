@@ -20,16 +20,16 @@
   マイページのメイン画面
 =========================== %>
       <div class="mypage-mainside">
-        <div class="meal-picrure">
-          <% @posts_by_date.sort_by { |date, _| date }.reverse_each do |date, posts| %>
-            <div class="mypage-data"><%= date.strftime("%Y/%m/%d") %></div>
+        <% @posts_by_date.sort_by { |date, _| date }.reverse_each do |date, posts| %>
+          <div class="mypage-data"><%= date.strftime("%Y/%m/%d") %></div>
+          <div class="meal-picture">
             <% posts.reverse_each do |post| %>
               <div class="meal-picture-size">
                 <%= link_to post_path(post.id) do %><%= image_tag post.image, class: "post-picture" %><% end %>
               </div>
             <% end %>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
 
     </div>

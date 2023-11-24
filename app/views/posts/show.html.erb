@@ -15,9 +15,8 @@
     </div>
     
     <div class="post-show-wrapper">
-      <div class="post-show-name">
-        <%= @post.user.nickname %>
-      </div>
+      <%= link_to @post.user.nickname, user_path(@post.user), class:"post-show-name"%>
+
       <div class="post-show-column">
         <% if user_signed_in? && current_user == @post.user %>
           <div class="post-show-menu">
@@ -67,7 +66,7 @@
         </div>
       <% end %>
     <% else %>
-      <div class="comment-else">コメントを投稿するには<%= link_to 'ログイン', new_user_session_path, class: "comment-login" %>が必要です</div>
+      <div class="template">コメントを投稿するには<%= link_to 'ログイン', new_user_session_path, class: "comment-login" %>が必要です</div>
     <% end %>
 
     <% @comments.each do |comment| %>
