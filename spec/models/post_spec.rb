@@ -22,19 +22,19 @@ RSpec.describe Post, type: :model do
       it 'imageが空では投稿できない' do
         @post.image = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include "Image can't be blank"
+        expect(@post.errors.full_messages).to include "写真を入力してください"
       end
 
       it 'mealtime_idが空では投稿できない' do
         @post.mealtime_id = '1'
         @post.valid?
-        expect(@post.errors.full_messages).to include 'Mealtime must be other than 1'
+        expect(@post.errors.full_messages).to include '食べた時間を選択してください'
       end
 
       it 'userが紐づいていないと登録できない' do
         @post.user = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include('User must exist')
+        expect(@post.errors.full_messages).to include('Userを入力してください')
       end
     end
   end
