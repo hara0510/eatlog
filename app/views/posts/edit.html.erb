@@ -2,21 +2,24 @@
   編集画面
 =========================== %>
 <div class="wrapper">
-  <div class="main">
-
+  <div class="main-small">
       <div class="pagetitle">投稿の編集</div>
+
+      <%# エラーメッセージの表示%>
+      <%= render 'shared/error_messages', model: @post %>
+
       <%= form_with(model: @post, local: true) do |f| %>
       <div>
-        <div class="post-text">写真(必須)</div><%= f.file_field :image, id:"post-image" %>
+        <div class="select-box-label">写真(必須)</div><%= f.file_field :image, id:"post-image" %>
       </div>
       <div>
-        <%= f.collection_select(:mealtime_id, Mealtime.all, :id, :name, {}, {class:"select-box"}) %>
+        <%= f.collection_select(:mealtime_id, Mealtime.all, :id, :name, {}, {class:"select-box",}) %>
       </div>
       <div>
-        <%= f.text_area :memo, placeholder: "感想やレシピをメモ(任意)", id:"post-memo" %>
+        <%= f.text_area :memo, placeholder: "感想やレシピをメモ(任意)", id:"select-memo" %>
       </div>
       <div class="submit">
-        <%= f.submit "EDIT" ,class:"submit-text" %>
+        <%= f.submit "POST" ,class:"submit-text",data: { turbo: false } %>
       </div>
       <% end %>
 

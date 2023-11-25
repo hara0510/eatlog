@@ -10,7 +10,7 @@
 
       <%= form_with(model: @post, local: true) do |f| %>
       <div>
-        <div class="post-text">写真(必須)</div><%= f.file_field :image, id:"post-image" %>
+        <div class="select-box-label">写真(必須)</div><%= f.file_field :image, id:"post-image" %>
       </div>
       <div>
         <%= f.collection_select(:mealtime_id, Mealtime.all, :id, :name, {}, {class:"select-box",}) %>

@@ -98,3 +98,66 @@
 .comment-content{
   margin: 0 5px 30px 5px;
 }
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  スマートフォン表示
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media (max-width: 599px) {
+
+  /* ===========================
+    投稿者コメント等
+  =========================== */
+  .post-show-name{
+    font-size: 12px;
+  }
+
+  .post-show-memo{
+    font-size: 10px;
+  }
+
+  .post-show-icon{
+    width: 12px;
+    height: 12px;
+    margin: 3px 5px 0 2px;
+  }
+
+  .post-show-menu{
+    width: 55px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    height: 20px;
+    margin: 3px 5px 0 0;
+    padding: 0px;
+  }
+
+  .post-show-menutext{
+    font-size: 8px;
+  }
+
+
+  /* ===========================
+    コメント
+  =========================== */
+  #comment{
+    height: 70px;
+    border-radius: 13px;
+    font-size: 10px;
+    padding: 10px;
+    margin: 15px 0 10px 0;
+  }
+
+  .comment-user{
+    font-size: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #805b4d;
+  }
+
+  .comment-content{
+    font-size: 10px;
+    margin: 0 5px 20px 5px;
+  }
+
+}

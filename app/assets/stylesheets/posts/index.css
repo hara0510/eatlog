@@ -48,3 +48,21 @@
 .post-picture img{
   object-fit: cover;
 }
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  スマートフォン表示
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media (max-width: 599px) {
+
+    /* ===========================
+    食事時間メニュー
+  =========================== */
+  .meal-time-list{
+    border-radius: 15px;
+    font-size: 8px;    
+    margin: 0 0 8px 5px;
+    padding: 5px;
+  }
+
+}

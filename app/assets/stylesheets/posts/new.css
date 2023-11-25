@@ -1,9 +1,16 @@
-.post-text{
-  font-size: 13px;
-  color: black;
-}
-
 #post-image{
   margin-bottom: 20px;
   font-size: 13px;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  スマートフォン表示
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media (max-width: 599px) {
+  
+  #post-image{
+    font-size: 10px;
+  }
+
 }
