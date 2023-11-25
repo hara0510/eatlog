@@ -1,10 +1,54 @@
+/* ===========================
+  画像表示
+=========================== */
+.post-show-picture-center{
+  text-align: center;
+}
+
 .post-show-picture{
   width: 100%;
   height: auto;
 }
 
+/* ===========================
+  投稿者コメント等
+=========================== */
+.post-show-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-show-name{
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.post-show-memo{
+  margin: 10px 0 5px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #805b4d;
+}
+
+.post-show-column{
+  display: flex;
+}
+
 .post-show-menus{
   display: flex;
+  align-items: center;
+}
+
+.post-show-name{
+  margin-right: 30px;
+}
+
+.post-show-icon{
+  width: 20px;
+  height: 20px;
+  margin: 5px 8px 0 2px;
 }
 
 .post-show-menu{
@@ -22,6 +66,10 @@
   text-decoration: none;
 }
 
+
+/* ===========================
+  コメント
+=========================== */
 #comment{
   width: 100%;
   height: 100px;
@@ -30,20 +78,6 @@
   border-color: #a58f86;
   padding: 20px;
   margin: 30px 0 10px 0;
-}
-
-.comment-else{
-  text-align: center;
-  width: 100%;
-  background-color: white;
-  text-align: center;
-  border: 1px solid #a58f86;
-  border-radius: 20px;
-  font-size: 13px;
-  color: #805b4d;
-  text-decoration: none;
-  padding: 10px;
-  margin: 30px 0px 30px 0px;
 }
 
 .comment-login{
@@ -63,4 +97,67 @@
 
 .comment-content{
   margin: 0 5px 30px 5px;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  スマートフォン表示
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media (max-width: 599px) {
+
+  /* ===========================
+    投稿者コメント等
+  =========================== */
+  .post-show-name{
+    font-size: 12px;
+  }
+
+  .post-show-memo{
+    font-size: 10px;
+  }
+
+  .post-show-icon{
+    width: 12px;
+    height: 12px;
+    margin: 3px 5px 0 2px;
+  }
+
+  .post-show-menu{
+    width: 55px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    height: 20px;
+    margin: 3px 5px 0 0;
+    padding: 0px;
+  }
+
+  .post-show-menutext{
+    font-size: 8px;
+  }
+
+
+  /* ===========================
+    コメント
+  =========================== */
+  #comment{
+    height: 70px;
+    border-radius: 13px;
+    font-size: 10px;
+    padding: 10px;
+    margin: 15px 0 10px 0;
+  }
+
+  .comment-user{
+    font-size: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #805b4d;
+  }
+
+  .comment-content{
+    font-size: 10px;
+    margin: 0 5px 20px 5px;
+  }
+
 }

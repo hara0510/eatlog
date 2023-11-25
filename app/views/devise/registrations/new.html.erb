@@ -1,49 +1,41 @@
-<%= render "shared/header" %>
-
+<%# ===========================
+  新規登録フォーム
+=========================== %>
 <div class="wrapper">
-<%# ===========================
-  メニュー
-=========================== %>
-  <%= render "shared/menu-side" %>
-
-<%# ===========================
-  投稿一覧
-=========================== %>
-  <div class="main-side-post">
-
+  <div class="main-small">
+    <div class="pagetitle">新規登録</div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+    
+    <%# エラーメッセージの表示%>
+    <%= render 'shared/error_messages', model: resource %>
 
     <div class="field">
-      <%= f.label :nickname %><br />
-      <%= f.text_field :nickname, autofocus: true %>
+      <%= f.label :名前, class:"select-box-label" %><br />
+      <%= f.text_field :nickname, autofocus: true, class:"select-box" %>
     </div>
 
     <div class="field">
-      <%= f.label :bio %><br />
-      <%= f.text_area :bio, autofocus: true, placeholder: '(任意)' %>
+      <%= f.label :自己紹介, class:"select-box-label" %><br />
+      <%= f.text_area :bio, autofocus: true, placeholder: '(任意)', id:"select-memo" %>
     </div>
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.label :Email, class:"select-box-label" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"select-box" %>
     </div>
 
     <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.label :パスワード, class:"select-box-label" %><br />
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: '6文字以上', class:"select-box" %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+      <%= f.label :"パスワード(確認)", class:"select-box-label" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"select-box" %>
+    </div><br />
 
     <div class="submit">
-      <%= f.submit "SIGN UP" ,id:"submit" %>
+      <%= f.submit "SIGN UP" ,class:"submit-text",data: { turbo: false } %>
     </div>
     <% end %>
 

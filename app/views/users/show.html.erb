@@ -1,24 +1,32 @@
-<%= render "shared/header" %>
-
+<%# ===========================
+  マイページのメニュー
+=========================== %>
 <div class="wrapper">
-<%# ===========================
-  メニュー
-=========================== %>
-<%= render "shared/menu-side" %>
+  <div class="main">
+    <div class="mypage-wrapper">
+
+      <div class="mypage-menuside">
+        <div class="mypage-nickname"><%= @nickname %></div>
+        <div class="mypage-bio"><%= @bio %></div>
+      </div>
+      
 
 <%# ===========================
-  投稿一覧
+  マイページのメイン画面
 =========================== %>
-  <div class="main-side">
-
-    <div class="meal-picrure">
-      <% @posts_by_date.sort_by { |date, _| date }.reverse_each do |date, posts| %>
-      <div class="mypage-data"><%= date.strftime("%Y/%m/%d") %></div>
-        <% posts.reverse_each do |post| %>
-          <%= link_to post_path(post.id) do %><%= image_tag post.image, class: "post-picture" %><% end %>
+      <div class="mypage-mainside">
+        <% @posts_by_date.sort_by { |date, _| date }.reverse_each do |date, posts| %>
+          <div class="mypage-data"><%= date.strftime("%Y/%m/%d") %></div>
+          <div class="meal-picture">
+            <% posts.reverse_each do |post| %>
+              <div class="meal-picture-size">
+                <%= link_to post_path(post.id) do %><%= image_tag post.image, class: "post-picture" %><% end %>
+              </div>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
+      </div>
+
     </div>
   </div>
-
 </div>
