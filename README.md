@@ -62,7 +62,7 @@ https://docs.google.com/spreadsheets/d/1ixcO8JLZJV7096aK1kloBPiQy_3Z0AyTAUTCGalp
 * ログアウトする
 * マイページを表示する<br />
   マイページでは写真を日付別に分けて表示し、1日の食事の記録がわかりやすいようにした<br />
-[![Image from Gyazo](https://i.gyazo.com/d87b921d44b45508da6318038709acb3.png)](https://gyazo.com/d87b921d44b45508da6318038709acb3)
+[![Image from Gyazo](https://i.gyazo.com/b950bc08b27b94b546c056f69cb03182.png)](https://gyazo.com/b950bc08b27b94b546c056f69cb03182)
 
 ## 投稿機能
 * 写真と食事時間、メモ(任意)を記入し投稿する<br />
@@ -109,13 +109,13 @@ https://docs.google.com/spreadsheets/d/1ixcO8JLZJV7096aK1kloBPiQy_3Z0AyTAUTCGalp
 <br /><br />
 
 # ローカルでの動作方法
-* 以下のコマンドを順に実行
-  1. git clone https://github.com/hara0510/eatlog.git
-  2. cd eatlog
-  3. bundle install
-  4. rails db:create
-  5. rails db:migrate
-  6. rails server
+* 以下のコマンドを順に実行<br />
+1. git clone https://github.com/hara0510/eatlog.git<br />
+2. cd eatlog<br />
+3. bundle install<br />
+4. rails db:create<br />
+5. rails db:migrate<br />
+6. rails server<br />
 
 <br /><br />
 
