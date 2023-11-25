@@ -25,11 +25,11 @@
 <br /><br />
 
 # 利用方法
-## ユーザー登録・マイページ機能
+## ユーザー登録を登録する・マイページを表示する
 1. トップページのメニューからユーザーの新規登録またはログインを行う
 2. メニューからマイページを選択する
 
-## 写真投稿
+## 写真を投稿する
 1. ログインしている状態で、メニューから投稿するを選択する
 2. 写真と食べた時間を入力し投稿する
 3. 一覧に投稿が表示される
@@ -62,7 +62,7 @@ https://docs.google.com/spreadsheets/d/1ixcO8JLZJV7096aK1kloBPiQy_3Z0AyTAUTCGalp
 * ログアウトする
 * マイページを表示する<br />
   マイページでは写真を日付別に分けて表示し、1日の食事の記録がわかりやすいようにした<br />
-[![Image from Gyazo](https://i.gyazo.com/5f673a1ecc4f60280c8398c44001d30b.gif)](https://gyazo.com/5f673a1ecc4f60280c8398c44001d30b)
+[![Image from Gyazo](https://i.gyazo.com/ea4aa19ea6399e035d4ec894c0c6b1b1.png)](https://gyazo.com/ea4aa19ea6399e035d4ec894c0c6b1b1)
 
 ## 投稿機能
 * 写真と食事時間、メモ(任意)を記入し投稿する<br />
@@ -71,10 +71,11 @@ https://docs.google.com/spreadsheets/d/1ixcO8JLZJV7096aK1kloBPiQy_3Z0AyTAUTCGalp
 * 投稿した内容を削除する
 * 一覧表示機能<br />
   トップページには投稿した写真をサムネイルの一覧で表示し、参考にする投稿を閲覧しやすいよう朝・昼・夜の食事時間ごとに分けて表示できるようにした<br />
-[![Image from Gyazo](https://i.gyazo.com/16fc1fb8dcef5c4e47463f8c62faa5c6.gif)](https://gyazo.com/16fc1fb8dcef5c4e47463f8c62faa5c6)
+[![Image from Gyazo](https://i.gyazo.com/066fb1241541a75a17172f0679469a0d.png)](https://gyazo.com/066fb1241541a75a17172f0679469a0d)
 
 ## コメント投稿機能
 * 投稿にコメントする
+[![Image from Gyazo](https://i.gyazo.com/686e65b7a8cee546a4c88a08b6131560.png)](https://gyazo.com/686e65b7a8cee546a4c88a08b6131560)
 
 ## レスポンシブ対応
 * スマートフォン用表示<br />
