@@ -91,7 +91,7 @@ https://docs.google.com/spreadsheets/d/1ixcO8JLZJV7096aK1kloBPiQy_3Z0AyTAUTCGalp
 <br /><br />
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/6c6038fa2052b63f39bb10285621f3af.png)](https://gyazo.com/6c6038fa2052b63f39bb10285621f3af)
+[![Image from Gyazo](https://i.gyazo.com/8ff345c71666e8cf7fd3732dfb179239.png)](https://gyazo.com/8ff345c71666e8cf7fd3732dfb179239)
 
 <br /><br />
 
