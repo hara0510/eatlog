@@ -7,5 +7,5 @@ class Post < ApplicationRecord
   has_many :favorites
 
   validates :image, presence: true
-  validates :mealtime_id, numericality: { other_than: 1 ,message: 'を選択してください'}
+  validates :mealtime_id, numericality: { other_than: 1, message: 'を選択してください' }
 end
