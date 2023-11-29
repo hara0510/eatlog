@@ -10,7 +10,13 @@
   マイページのメイン画面
 =========================== %>
       <div class="mypage-mainside">
-        
+        <div class="meal-picture">
+          <% @favorite_posts.reverse_each do |post| %>
+            <div class="meal-picture-size">
+              <%= link_to post_path(post.id) do %><%= image_tag post.image, class: "post-picture" %><% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
 
     </div>

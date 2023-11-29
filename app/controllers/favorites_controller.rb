@@ -2,7 +2,8 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user!, only: [:create]
 
   def index
-    @user = current_user
+    @user = User.find(params[:id])
+    @favorite_posts = @user.favorites.map(&:post)
   end
 
   def create
