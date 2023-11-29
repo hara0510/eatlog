@@ -43,7 +43,9 @@
             <%= image_tag 'mealtime-dinner.png', class: "post-show-icon" %>
         <% end %>
       <% end %>
-      <%= image_tag 'favorite-on.png' , class: "post-show-icon" %>
+      <%= button_to post_favorites_path(@post), method: :post, remote: true, class: "post-show-iconbotan" do %>
+        <%= image_tag('favorite-on.png', class: 'post-show-icon') %>
+      <% end %>
     </div>
 
 
