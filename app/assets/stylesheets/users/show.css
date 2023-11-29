@@ -94,5 +94,16 @@
     .mypage-data:first-child {
       margin-top: 0;
     }
+
+    .mypage-lists{
+      margin: 10px 0 0 10px;
+      text-align: left;
+    }
+    
+    .mypage-list{
+      font-size: 10px;
+      text-decoration: none;
+      color: black;
+    }
   
 }
