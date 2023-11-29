@@ -43,7 +43,19 @@
             <%= image_tag 'mealtime-dinner.png', class: "post-show-icon" %>
         <% end %>
       <% end %>
-      <%= image_tag 'favorite-on.png' , class: "post-show-icon" %>
+      
+<% if user_signed_in? %>
+  <% if user_signed_in? && current_user.favorites.exists?(post_id: @post.id) %>
+    <%= button_to post_favorite_path(@post, current_user.favorites.find_by(post_id: @post.id)), method: :delete, remote: true, class: "post-show-iconbotan" do %>
+      <%= image_tag('favorite-on.png', class: 'post-show-icon') %>
+    <% end %>
+  <% else %>
+    <%= button_to post_favorites_path(@post), method: :post, remote: true, class: "post-show-iconbotan" do %>
+      <%= image_tag('favorite-off.png', class: 'post-show-icon') %>
+    <% end %>
+  <% end %>
+<% else %>
+<% end %>
     </div>
 
 

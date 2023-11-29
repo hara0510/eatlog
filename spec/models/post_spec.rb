@@ -22,7 +22,7 @@ RSpec.describe Post, type: :model do
       it 'imageが空では投稿できない' do
         @post.image = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include "写真を入力してください"
+        expect(@post.errors.full_messages).to include '写真を入力してください'
       end
 
       it 'mealtime_idが空では投稿できない' do

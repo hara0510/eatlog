@@ -1,0 +1,9 @@
+<div class="mypage-menuside">
+  <div class="mypage-nickname"><%= @user.nickname %></div>
+  <% if @user.bio.present? %>
+    <div class="mypage-bio"><%= @user.bio %></div>
+  <% end %>
+  <div class="mypage-lists">
+    <%= link_to 'お気に入り', favorites_user_path, class: "mypage-list" %>
+  </div>
+</div>

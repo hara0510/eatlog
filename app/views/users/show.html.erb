@@ -4,12 +4,7 @@
 <div class="wrapper">
   <div class="main">
     <div class="mypage-wrapper">
-
-      <div class="mypage-menuside">
-        <div class="mypage-nickname"><%= @nickname %></div>
-        <div class="mypage-bio"><%= @bio %></div>
-      </div>
-      
+      <%= render 'shared/mypage_menu', model: @user %>
 
 <%# ===========================
   マイページのメイン画面

@@ -66,6 +66,12 @@
   text-decoration: none;
 }
 
+.post-show-iconbotan{
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
 
 /* ===========================
   コメント

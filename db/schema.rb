@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_22_130759) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_29_001939) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -47,12 +47,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_22_130759) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favorites", charset: "utf8", force: :cascade do |t|
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", charset: "utf8", force: :cascade do |t|
     t.text "memo"
     t.integer "mealtime_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+  end
+
+  create_table "user_favorites", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "favorite_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["favorite_id"], name: "index_user_favorites_on_favorite_id"
+    t.index ["user_id"], name: "index_user_favorites_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -71,4 +86,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_22_130759) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "user_favorites", "favorites"
+  add_foreign_key "user_favorites", "users"
 end

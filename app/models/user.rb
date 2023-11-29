@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
+  has_many :user_favorites
+  has_many :favorites, through: :user_favorites
 
   validates :nickname, presence: true
 end
