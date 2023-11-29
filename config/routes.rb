@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get 'show_by_mealtime/:mealtime_id', to: 'posts#show_by_mealtime', as: 'show_by_mealtime'
     end
     resources :comments, only: :create
-    resources :favorites, only: :create
+    resources :favorites, only: [:create, :destroy]
   end
 
   resources :users, only: :show
