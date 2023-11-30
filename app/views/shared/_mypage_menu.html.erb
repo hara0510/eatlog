@@ -6,7 +6,7 @@
 
   <div class="mypage-lists">
     <% if @user.followed_by?(current_user) %>
-      <%=link_to "フォロー中", user_follows_path(@user.id),class: "mypage-list", data: { turbo_method: :delete } %>
+      <%=link_to "フォロー中", user_follow_path(@user.id),class: "mypage-list", data: { turbo_method: :delete } %>
     <% else %>
       <%=link_to "フォローする", user_follows_path(@user.id),class: "mypage-list", data: { turbo_method: :post } %>
     <% end %>
