@@ -12,17 +12,25 @@
       <%= link_to @post.user.nickname, user_path(@post.user), class:"post-show-name"%>
 
       <div class="post-show-column">
-        <% if user_signed_in? && current_user == @post.user %>
-          <div class="post-show-menu">
-            <%= link_to "EDIT", edit_post_path(@post.id), class: "post-show-menutext" %>
-          </div>
-          <div class="post-show-menu">
-            <%= link_to "DELETE", post_path(@post.id), class: "post-show-menutext",  data: { turbo_method: :delete } %>
-          </div>
-        <% else %>
-          <div class="post-show-menu">
-            <%= link_to "FOLLOW", root_path, class: "post-show-menutext" %>
-          </div>
+        <%if user_signed_in? %>
+          <% if current_user == @post.user %>
+            <div class="post-show-menu">
+              <%= link_to "EDIT", edit_post_path(@post.id), class: "post-show-menutext" %>
+            </div>
+            <div class="post-show-menu">
+              <%= link_to "DELETE", post_path(@post.id), class: "post-show-menutext",  data: { turbo_method: :delete } %>
+            </div>
+          <% else %>
+            <% if user_signed_in? && current_user != @post.user %>
+              <div class="post-show-menu">
+                <% if @post.user.followed_by?(current_user) %>
+                  <%= link_to "UNFOLLOW", user_follow_path(@post.user), class: "post-show-menutext", data: { turbo_method: :delete } %>
+                <% else %>
+                  <%= link_to "FOLLOW", user_follows_path(@post.user), class: "post-show-menutext", data: { turbo_method: :post } %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>

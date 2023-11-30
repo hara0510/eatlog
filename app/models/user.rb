@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
 
   def followed_by?(user)
+    return false unless user.present?
     follow = passive_follows.find_by(following_id: user.id)
     return follow.present?
   end

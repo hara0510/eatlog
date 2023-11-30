@@ -4,13 +4,15 @@
     <div class="mypage-bio"><%= @user.bio %></div>
   <% end %>
 
-  <div class="mypage-lists">
-    <% if @user.followed_by?(current_user) %>
-      <%=link_to "フォロー中", user_follow_path(@user.id),class: "mypage-list", data: { turbo_method: :delete } %>
-    <% else %>
-      <%=link_to "フォローする", user_follows_path(@user.id),class: "mypage-list", data: { turbo_method: :post } %>
-    <% end %>
-  </div>
+  <% if current_user.present? && current_user != @user %>
+    <div class="post-show-menu">
+      <% if @user.followed_by?(current_user) %>
+        <%=link_to "UNFOLLOW", user_follow_path(@user.id),class: "post-show-menutext", data: { turbo_method: :delete } %>
+      <% else %>
+        <%=link_to "FOLLOW", user_follows_path(@user.id),class: "post-show-menutext", data: { turbo_method: :post } %>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="mypage-lists">
     <%= link_to 'お気に入り', favorites_user_path, class: "mypage-list" %>

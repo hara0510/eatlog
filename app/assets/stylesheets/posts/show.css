@@ -3,6 +3,7 @@
 =========================== */
 .post-show-picture-center{
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .post-show-picture{
@@ -52,11 +53,11 @@
 }
 
 .post-show-menu{
-  width: 80px;
+  width: 110px;
   text-align: center;
   border: 1px solid #a58f86;
   border-radius: 15px;
-  margin: 10px 5px 0 0;
+  margin: 0px 5px 0 0;
   padding: 5px 10px 5px 10px;
 }
 
@@ -129,12 +130,12 @@
   }
 
   .post-show-menu{
-    width: 55px;
+    width: 70px;
     border-radius: 15px;
     display: grid;
     place-items: center;
     height: 20px;
-    margin: 3px 5px 0 0;
+    margin: 0px 5px 0 0;
     padding: 0px;
   }
 
