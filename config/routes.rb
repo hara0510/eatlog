@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   resources :users, only: :show do
     get 'favorites', to: 'favorites#index', on: :member
+    resources :follows, only: [:create, :destroy]
   end
 end
