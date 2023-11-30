@@ -16,4 +16,9 @@ class User < ApplicationRecord
   has_many :followers, through: :active_follows, source: :following
 
   validates :nickname, presence: true
+
+  def followed_by?(user)
+    follow = passive_follows.find_by(following_id: user.id)
+    return follow.present?
+  end
 end
