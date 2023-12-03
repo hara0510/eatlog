@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show do
     get 'favorites', to: 'favorites#index', on: :member
-    resources :follows, only: [:create, :destroy]
+    resources :follows, only: [:index, :create, :destroy]
+    get 'list/:type', on: :member, to: 'follows#index', as: 'list', constraints: { type: /(followers|following)/ }
   end
 end
