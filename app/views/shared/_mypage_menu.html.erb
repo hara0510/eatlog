@@ -14,6 +14,10 @@
     </div>
   <% end %>
 
+
+  <div class="mypage-lists">
+    <%= link_to "#{user.nickname}さんの投稿", user_path(user), class: "mypage-list" %>
+  </div>
   <div class="mypage-lists">
     <%= link_to 'フォロー', user_follows_path(user, type: 'following'), class: "mypage-list" %>
   </div>
