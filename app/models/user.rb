@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :followings, through: :active_follows, source: :follower
 
   has_many :passive_follows, class_name:"Follow", foreign_key: :follower_id
-  has_many :followers, through: :active_follows, source: :following
+  has_many :followers, through: :passive_follows, source: :following
 
   validates :nickname, presence: true
 
