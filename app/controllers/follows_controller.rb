@@ -10,7 +10,6 @@ class FollowsController < ApplicationController
     end
   end
 
-
   def create
     follow = current_user.active_follows.new(follower_id: params[:user_id])
     follow.save
