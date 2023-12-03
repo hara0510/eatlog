@@ -21,5 +21,3 @@ RSpec.describe Favorite, type: :model do
     end
   end
 end
-
-# bundle exec rspec spec/models/favorite_spec.rb
