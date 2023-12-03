@@ -12,7 +12,9 @@
       <div class="mypage-mainside">
         <div class="pagetitle"><%= @title %></div>
           <% @users.each do |user| %>
-            <p class="follow-list"><%= link_to user.nickname, user_path(user.id) %></p>
+            <div class="follow-lists">
+              <%= link_to user.nickname, user_path(user.id),class: "follow-list" %>
+            </div>
           <% end %>
       </div>
     </div>

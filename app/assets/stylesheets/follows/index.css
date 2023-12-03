@@ -1,0 +1,21 @@
+.follow-lists{
+  margin: 0 0 10px 10px;
+}
+
+.follow-list{
+  font-size: 15px;
+  color: black;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  スマートフォン表示
+~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media (max-width: 599px) {
+  
+  .follow-list{
+    font-size: 10px;
+  }
+    
+
+}
