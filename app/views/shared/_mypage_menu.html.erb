@@ -14,20 +14,21 @@
     </div>
   <% end %>
 
-
-  <div class="mypage-lists">
-    <%= link_to "#{user.nickname}さんの投稿", user_path(user), class: "mypage-list" %>
-  </div>
-  <div class="mypage-lists">
-    <%= link_to 'フォロー', user_follows_path(user, type: 'following'), class: "mypage-list" %>
-  </div>
-  <div class="mypage-lists">
-    <%= link_to 'フォロワー', user_follows_path(user, type: 'followers'), class: "mypage-list" %>
-  </div>
-  <div class="mypage-lists">
-    <%= link_to 'お気に入り', favorites_user_path(user), class: "mypage-list" %>
-  </div>
-  <div class="mypage-lists">
-    <%= link_to 'マイページ編集', root_path, class: "mypage-list" %>
-  </div>
+  <% if user == current_user %>
+    <div class="mypage-lists">
+      <%= link_to "あなたの投稿", user_path(user), class: "mypage-list" %>
+    </div>
+    <div class="mypage-lists">
+      <%= link_to 'フォロー', user_follows_path(user, type: 'following'), class: "mypage-list" %>
+    </div>
+    <div class="mypage-lists">
+      <%= link_to 'フォロワー', user_follows_path(user, type: 'followers'), class: "mypage-list" %>
+    </div>
+    <div class="mypage-lists">
+      <%= link_to 'お気に入り', favorites_user_path(user), class: "mypage-list" %>
+    </div>
+    <div class="mypage-lists">
+      <%= link_to 'マイページ編集', root_path, class: "mypage-list" %>
+    </div>
+  <% end %>
 </div>
