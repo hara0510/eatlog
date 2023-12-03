@@ -64,46 +64,47 @@
   color: #805b4d;
   text-decoration: none;
   line-height: 70px;
+  display: block;
 }
 
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  スマートフォン表示
-~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-@media (max-width: 599px) {
-
-  .header-fixed{
-    height: 60px;
-  }
-
-  .menu-open {
-    font-size: 20px;
-  }
-
-  .title {
-    font-size: 20px;
-    margin-right: 23px;
-  }
 
 
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    メニュー設定
+    スマートフォン表示
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-  #menu-side{
-    display: none;
-    position: fixed;
-    border-radius: 10px;
-    width: 100vw;
-  }
+  @media (max-width: 599px) {
 
-  .menu-list{
-    height: 50px;
-  }
+    .header-fixed{
+      height: 60px;
+    }
 
-  .menu-list-text{
-    font-size: 10px;
-    line-height: 50px;
-  }
+    .menu-open {
+      font-size: 20px;
+    }
 
-}
+    .title {
+      font-size: 20px;
+      margin-right: 23px;
+    }
+
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      メニュー設定
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    #menu-side{
+      display: none;
+      position: fixed;
+      border-radius: 10px;
+      width: 100vw;
+    }
+
+    .menu-list{
+      height: 50px;
+    }
+
+    .menu-list-text{
+      font-size: 10px;
+      line-height: 50px;
+    }
+
+  }
