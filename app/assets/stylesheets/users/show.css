@@ -51,6 +51,12 @@
   color: black;
 }
 
+.user-avatar{
+  width: 60%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~
   スマートフォン表示
@@ -106,5 +112,10 @@
       text-decoration: none;
       color: black;
     }
+
+    .user-avatar{
+      width: 100px;
+      height: auto;
+    }    
   
 }

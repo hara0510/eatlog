@@ -1,5 +1,12 @@
 <div class="mypage-menuside">
   <div class="mypage-nickname"><%= user.nickname %></div>
+
+  <% if @user.avatar.attached? %>
+    <%= image_tag user.avatar, class: "user-avatar" %>
+  <% else %>
+    <%= image_tag 'user-sample.png', class: "user-avatar"%>
+  <% end %>
+
   <% if user.bio.present? %>
     <div class="mypage-bio"><%= user.bio %></div>
   <% end %>
