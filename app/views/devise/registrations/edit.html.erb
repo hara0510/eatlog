@@ -1,45 +1,52 @@
-<%= render "shared/header" %>
+<%# ===========================
+  新規登録フォーム
+=========================== %>
+<div class="wrapper">
+  <div class="main-small">
+    <div class="pagetitle">新規登録</div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    
+    <%# エラーメッセージの表示%>
+    <%= render 'shared/error_messages', model: resource %>
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <div class="field">
+      <%= f.label :名前, class:"select-box-label" %><br />
+      <%= f.text_field :nickname, autofocus: true, class:"select-box" %>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div>
+      <div class="select-box-label">プロフィール画像(任意)</div><%= f.file_field :avatar, id:"post-image" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.label :自己紹介, class:"select-box-label" %><br />
+      <%= f.text_area :bio, autofocus: true, placeholder: '(任意)', id:"select-memo" %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <div class="field">
+      <%= f.label :Email, class:"select-box-label" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"select-box" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+    <div class="field">
+      <%= f.label :パスワード, class:"select-box-label" %><br />
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: '6文字以上', class:"select-box" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :"パスワード(確認)", class:"select-box-label" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"select-box" %>
+    </div><br />
+
+    <div class="field">
+      <%= f.label :"現在のパスワード", class:"select-box-label" %><br />
+      <%= f.password_field :current_password, autocomplete: "current-password", class:"select-box" %>
+    </div><br />
+
+    <div class="submit">
+      <%= f.submit "EDIT" ,class:"submit-text",data: { turbo: false } %>
+    </div>
     <% end %>
+
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+</div>
