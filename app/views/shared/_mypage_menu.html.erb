@@ -2,9 +2,13 @@
   <div class="mypage-nickname"><%= user.nickname %></div>
 
   <% if @user.avatar.attached? %>
-    <%= image_tag user.avatar, class: "user-avatar" %>
+    <div class="user-avatar">
+      <%= image_tag user.avatar, class: "user-avatar-image" %>
+    </div>
   <% else %>
-    <%= image_tag 'user-sample.png', class: "user-avatar"%>
+    <div class="user-avatar">
+      <%= image_tag 'user-sample.png', class: "user-avatar-image"%>
+    </div>
   <% end %>
 
   <% if user.bio.present? %>
