@@ -1,5 +1,16 @@
 <div class="mypage-menuside">
   <div class="mypage-nickname"><%= user.nickname %></div>
+
+  <% if @user.avatar.attached? %>
+    <div class="user-avatar">
+      <%= image_tag user.avatar, class: "user-avatar-image" %>
+    </div>
+  <% else %>
+    <div class="user-avatar">
+      <%= image_tag 'user-sample.png', class: "user-avatar-image"%>
+    </div>
+  <% end %>
+
   <% if user.bio.present? %>
     <div class="mypage-bio"><%= user.bio %></div>
   <% end %>
@@ -28,7 +39,7 @@
       <%= link_to 'お気に入り', favorites_user_path(user), class: "mypage-list" %>
     </div>
     <div class="mypage-lists">
-      <%= link_to 'マイページ編集', root_path, class: "mypage-list" %>
+      <%= link_to 'マイページ編集', edit_user_registration_path(user), class: "mypage-list" %>
     </div>
   <% end %>
 </div>

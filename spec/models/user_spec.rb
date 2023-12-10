@@ -15,6 +15,11 @@ RSpec.describe User, type: :model do
         @user.bio = ''
         expect(@user).to be_valid
       end
+
+      it 'avaterがなくても登録できる' do
+        @user.avatar = nil
+        expect(@user).to be_valid
+      end
     end
 
     context '登録できない場合' do
