@@ -25,21 +25,49 @@
     </div>
   <% end %>
 
+  
   <% if user == current_user %>
-    <div class="mypage-lists">
-      <%= link_to "あなたの投稿", user_path(user), class: "mypage-list" %>
-    </div>
-    <div class="mypage-lists">
-      <%= link_to 'フォロー', user_follows_path(user, type: 'following'), class: "mypage-list" %>
-    </div>
-    <div class="mypage-lists">
-      <%= link_to 'フォロワー', user_follows_path(user, type: 'followers'), class: "mypage-list" %>
-    </div>
-    <div class="mypage-lists">
-      <%= link_to 'お気に入り', favorites_user_path(user), class: "mypage-list" %>
-    </div>
-    <div class="mypage-lists">
-      <%= link_to 'マイページ編集', edit_user_registration_path(user), class: "mypage-list" %>
+    <div class="mypage-menu-list">
+      <div class="mypage-lists">
+        <%= link_to "あなたの投稿", user_path(user), class: "mypage-list" %>
+        <% if @user.avatar.attached? %>
+          <div class="mypage-menu-user-avatar">
+            <%= link_to user_path(user) do %>
+              <%= image_tag user.avatar, class: "mypage-menu-user-avatar-image" %>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="mypage-menu-user-avatar">
+            <%= link_to user_path(user) do %>
+              <%= image_tag 'user-sample.png', class: "mypage-menu-user-avatar-image"%>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="mypage-lists">
+        <%= link_to 'フォロー', user_follows_path(user, type: 'following'), class: "mypage-list" %>
+        <%= link_to user_follows_path(user, type: 'following') do %>
+          <%= image_tag 'follow.png', class: "mypage-menu-image"%>
+        <% end %>
+      </div>
+      <div class="mypage-lists">
+        <%= link_to 'フォロワー', user_follows_path(user, type: 'followers'), class: "mypage-list" %>
+        <%= link_to user_follows_path(user, type: 'followers') do %>
+          <%= image_tag 'follower.png', class: "mypage-menu-image"%>
+        <% end %>
+      </div>
+      <div class="mypage-lists">
+        <%= link_to 'お気に入り', favorites_user_path(user), class: "mypage-list" %>
+        <%= link_to favorites_user_path(user) do %>
+          <%= image_tag 'favorite-on.png', class: "mypage-menu-image"%>
+        <% end %>
+      </div>
+      <div class="mypage-lists">
+        <%= link_to 'マイページ編集', edit_user_registration_path(user), class: "mypage-list" %>
+        <%= link_to edit_user_registration_path(user) do %>
+          <%= image_tag 'setting.png', class: "mypage-menu-image"%>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
