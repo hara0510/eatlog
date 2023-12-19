@@ -11,6 +11,16 @@
       <%= link_to "DINNER", show_by_mealtime_posts_path(mealtime_id: '4'), class: "meal-time-list" %>
     </div>
 
+    <div id = "meal-time-dropdown">
+      <div class = "meal-time-dropdown-btn">▼ 選択してください</div>
+      <div class = "meal-time-dropdown-lists hidden" id="meal-time-dpull-down">
+        <%= link_to "ALL", root_path, class: "meal-time-dropdown-list" %>
+        <%= link_to "BREAKFAST", show_by_mealtime_posts_path(mealtime_id: '2'), class: "meal-time-dropdown-list" %>
+        <%= link_to "LUNCH", show_by_mealtime_posts_path(mealtime_id: '3'), class: "meal-time-dropdown-list" %>
+        <%= link_to "DINNER", show_by_mealtime_posts_path(mealtime_id: '4'), class: "meal-time-dropdown-list" %>
+      </div>
+    </div>
+
     <div class="meal-picture">
       <% @posts.reverse_each do |post| %>
         <div class="meal-picture-size">
