@@ -12,8 +12,16 @@
       <div class="mypage-mainside">
         <div class="pagetitle"><%= @title %></div>
           <% @users.each do |user| %>
-            <div class="follow-lists">
-              <%= link_to user.nickname, user_path(user.id),class: "follow-list" %>
+            <div class="follow-user">
+
+              <% if user.avatar.attached? %>
+                <%= image_tag user.avatar, class: "follow-avatar-image" %>
+              <% else %>
+                <%= image_tag 'user-sample.png', class: "follow-avatar-image"%>
+              <% end %>
+
+                <%= link_to user.nickname, user_path(user.id),class: "follow-list" %>
+
             </div>
           <% end %>
       </div>
