@@ -11,6 +11,13 @@
       <%= link_to "DINNER", show_by_mealtime_posts_path(mealtime_id: '4'), class: "meal-time-list" %>
     </div>
 
+    <div class = "meal-time-icon">
+      <%= link_to root_path do %><%= image_tag "mealtime-all.png", class: "mealtime-icon-image" %><% end %>
+      <%= link_to show_by_mealtime_posts_path(mealtime_id: '2') do %><%= image_tag "mealtime-breakfast.png", class: "mealtime-icon-image" %><% end %>
+      <%= link_to show_by_mealtime_posts_path(mealtime_id: '3') do %><%= image_tag "mealtime-lunch.png", class: "mealtime-icon-image" %><% end %>
+      <%= link_to show_by_mealtime_posts_path(mealtime_id: '4') do %><%= image_tag "mealtime-dinner.png", class: "mealtime-icon-image" %><% end %>
+    </div>
+
     <div class="meal-picture">
       <% @posts.reverse_each do |post| %>
         <div class="meal-picture-size">
